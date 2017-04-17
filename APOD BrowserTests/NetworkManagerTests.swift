@@ -34,10 +34,9 @@ class NetworkManagerTests: XCTestCase {
         
         var testData : Data = Data()
         let method : String = "GET"
-        let urlStr : String = "https://api.nasa.gov/planetary/apod"
-        let params : Dictionary<String, String> = ["api_key": "DEMO_KEY"]
+        let params : Dictionary<String, String> = ["api_key": apiKey]
         
-        networkManager.makeRequest(method: method, params: params, urlStr: urlStr) { (data, urlResponse, error) in
+        networkManager.makeRequest(method: method, params: params, urlStr: apiURL) { (data, urlResponse, error) in
             guard error == nil else {
                 XCTFail("error: \(String(describing: error))")
                 return

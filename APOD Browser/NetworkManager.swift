@@ -45,10 +45,10 @@ class NetworkManager {
                 request.httpMethod = method
                 self.handleRequest(request: request, completion: completion)
             } else {
-                NSLog("Could not obtain NSURL from \(urlComponents.debugDescription)")
+                DLog("Could not obtain NSURL from \(urlComponents.debugDescription)")
             }
         } else {
-            NSLog("Could not construct NSURLComponents from \(urlStr)")
+            DLog("Could not construct NSURLComponents from \(urlStr)")
         }
     }
     
