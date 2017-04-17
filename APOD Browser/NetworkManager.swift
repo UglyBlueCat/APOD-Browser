@@ -18,6 +18,7 @@ class NetworkManager: NSObject {
     
     func makeRequest(method: String,
                      params: Dictionary<String, String>,
-                     urlStr: String) {
+                     urlStr: String,
+                     completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
     }
 }
