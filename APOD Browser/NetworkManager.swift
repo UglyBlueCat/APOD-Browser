@@ -15,4 +15,8 @@ class NetworkManager: NSObject {
     override init() {
         self.urlSession = URLSession(configuration: .default)
     }
+    
+    func makeRequest() {
+        
+    }
 }
