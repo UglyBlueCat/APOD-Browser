@@ -30,6 +30,11 @@ class NetworkManagerTests: XCTestCase {
     }
     
     func testRequestHandling() {
-         networkManager.makeRequest()
+        
+        let method : String = "GET"
+        let urlStr : String = "https://api.nasa.gov/planetary/apod"
+        let params : Dictionary<String, String> = ["api_key": "DEMO_KEY"]
+        
+         networkManager.makeRequest(method: method, params: params, urlStr: urlStr)
     }
 }
