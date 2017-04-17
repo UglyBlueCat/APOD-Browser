@@ -24,4 +24,8 @@ class NetworkManagerTests: XCTestCase {
     func testNetworkManagerExists() {
         XCTAssertNotNil(networkManager)
     }
+    
+    func testURLSessionExists() {
+        XCTAssertNotNil(networkManager.urlSession)
+    }
 }
