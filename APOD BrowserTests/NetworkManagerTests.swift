@@ -28,4 +28,8 @@ class NetworkManagerTests: XCTestCase {
     func testURLSessionExists() {
         XCTAssertNotNil(networkManager.urlSession)
     }
+    
+    func testRequestHandling() {
+         networkManager.makeRequest()
+    }
 }
