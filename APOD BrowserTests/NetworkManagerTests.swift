@@ -11,6 +11,10 @@ import XCTest
 
 class NetworkManagerTests: XCTestCase {
     
+    enum Method: String {
+        case GET, POST, PUT, DELETE
+    }
+    
     let networkManager : NetworkManager = NetworkManager()
     
     override func setUp() {
@@ -33,7 +37,7 @@ class NetworkManagerTests: XCTestCase {
         let expect = expectation(description: "waitForNetworkManager")
         
         var testData : Data = Data()
-        let method : String = "GET"
+        let method : Method = .GET
         let params : Dictionary<String, String> = ["api_key": apiKey]
         
         networkManager.makeRequest(method: method, params: params, urlStr: apiURL) { (data, urlResponse, error) in
