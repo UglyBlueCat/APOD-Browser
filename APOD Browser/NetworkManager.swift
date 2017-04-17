@@ -6,13 +6,13 @@
 //  Copyright © 2017 Robin Spinks. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class NetworkManager: NSObject {
+class NetworkManager {
     
     let urlSession : URLSession
     
-    override init() {
+    init() {
         self.urlSession = URLSession(configuration: .default)
     }
     
