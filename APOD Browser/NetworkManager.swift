@@ -16,7 +16,8 @@ class NetworkManager: NSObject {
         self.urlSession = URLSession(configuration: .default)
     }
     
-    func makeRequest() {
-        
+    func makeRequest(method: String,
+                     params: Dictionary<String, String>,
+                     urlStr: String) {
     }
 }

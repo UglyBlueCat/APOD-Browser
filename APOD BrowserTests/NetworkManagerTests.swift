@@ -35,6 +35,6 @@ class NetworkManagerTests: XCTestCase {
         let urlStr : String = "https://api.nasa.gov/planetary/apod"
         let params : Dictionary<String, String> = ["api_key": "DEMO_KEY"]
         
-         networkManager.makeRequest(method: method, params: params, urlStr: urlStr)
+        networkManager.makeRequest(method: method, params: params, urlStr: urlStr)
     }
 }
