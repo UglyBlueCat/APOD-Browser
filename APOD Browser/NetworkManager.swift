@@ -9,5 +9,10 @@
 import UIKit
 
 class NetworkManager: NSObject {
-
+    
+    let urlSession : URLSession
+    
+    override init() {
+        self.urlSession = URLSession(configuration: .default)
+    }
 }
