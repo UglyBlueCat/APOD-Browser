@@ -11,6 +11,8 @@ import XCTest
 
 class NetworkManagerTests: XCTestCase {
     
+    let networkManager : NetworkManager = NetworkManager()
+    
     override func setUp() {
         super.setUp()
     }
@@ -20,6 +22,6 @@ class NetworkManagerTests: XCTestCase {
     }
     
     func testNetworkManagerExists() {
-        let _ = NetworkManager()
+        XCTAssertNotNil(networkManager)
     }
 }
