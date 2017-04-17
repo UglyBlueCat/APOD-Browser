@@ -18,4 +18,8 @@ class APOD_BrowserTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
+    
+    func testNetworkManagerExists() {
+        let _ = NetworkManager()
+    }
 }
