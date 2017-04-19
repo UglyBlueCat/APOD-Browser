@@ -33,10 +33,10 @@ class NetworkManagerTests: XCTestCase {
         let expect = expectation(description: "waitForNetworkManager")
         
         var testData : Data = Data()
-        let method : NetworkManager.Method = .GET
         let params : Dictionary<String, String> = ["api_key": apiKey]
         
-        networkManager.makeRequest(method: method, params: params, urlStr: apiURL) { (data, urlResponse, error) in
+        networkManager.getRequest(params: params, urlStr: apiURL) {
+            (data, urlResponse, error) in
             guard error == nil else {
                 XCTFail("error: \(String(describing: error))")
                 return
