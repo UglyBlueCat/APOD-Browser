@@ -10,6 +10,10 @@ import Foundation
 
 class NetworkManager {
     
+    enum Method: String {
+        case GET, POST, PUT, DELETE
+    }
+    
     let urlSession : URLSession
     
     init() {
@@ -25,7 +29,7 @@ class NetworkManager {
         - urlStr: the URL of the request
         - completion: A method to handle the returned data
      */
-    func makeRequest(method: String,
+    func makeRequest(method: Method,
                      params: Dictionary<String, String>,
                      urlStr: String,
                      completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
@@ -42,7 +46,7 @@ class NetworkManager {
             
             if let url : URL = urlComponents.url {
                 var request : URLRequest = URLRequest(url: url)
-                request.httpMethod = method
+                request.httpMethod = method.rawValue
                 self.handleRequest(request: request, completion: completion)
             } else {
                 DLog("Could not obtain NSURL from \(urlComponents.debugDescription)")
