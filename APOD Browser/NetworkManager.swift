@@ -21,6 +21,23 @@ class NetworkManager {
     }
     
     /**
+     Calls an HTTP request with the GET method
+     
+     - parameters:
+         - params: The parameters for the GET request
+         - urlString: the URL of the GET request
+         - completion: A method to handle the returned data
+     */
+    func getRequest (params: Dictionary<String, String>,
+                     urlStr: String,
+                     completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        makeRequest(method: .GET,
+                    params: params,
+                    urlStr: urlStr,
+                    completion: completion)
+    }
+    
+    /**
      Makes an HTTP request with the provided parameters
      
      - parameters:
