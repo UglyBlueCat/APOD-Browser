@@ -45,6 +45,11 @@ class NetworkManagerTests: XCTestCase {
                 XCTFail("null data")
                 return
             }
+            if let httpResponse = urlResponse as? HTTPURLResponse {
+                XCTAssert(httpResponse.statusCode == 200, "status code == \(httpResponse.statusCode)")
+            } else {
+                XCTFail("unable to cast URLResponse to HTTPURLResponse")
+            }
             testData = data!
             expect.fulfill()
         }
