@@ -13,14 +13,6 @@ class NetworkManagerTests: XCTestCase {
     
     let networkManager : NetworkManager = NetworkManager()
     
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func testNetworkManagerExists() {
         XCTAssertNotNil(networkManager)
     }
