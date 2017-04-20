@@ -16,10 +16,10 @@ let apiKey = "DEMO_KEY"
  A replacement for \_\_PRETTY_FUNCTION__
  
  - parameters:
- - msg: The message to print
- - function: The calling function or method (Defaults to #function)
- - file: The file containing function (Defaults to #file)
- - line: The line of the DLog call (Defaults to #line)
+     - msg: The message to print
+     - function: The calling function or method (Defaults to #function)
+     - file: The file containing function (Defaults to #file)
+     - line: The line of the DLog call (Defaults to #line)
  */
 func DLog(_ msg: String, function: String = #function, file: String = #file, line: Int = #line) {
     let url = URL(fileURLWithPath: file)
