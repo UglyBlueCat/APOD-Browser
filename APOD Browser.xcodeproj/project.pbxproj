@@ -17,6 +17,8 @@
 		99782DD31EA4D3000009A9CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99782DD21EA4D3000009A9CA /* NetworkManager.swift */; };
 		99782DD51EA4D5170009A9CA /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99782DD41EA4D5170009A9CA /* NetworkManagerTests.swift */; };
 		99782DDF1EA535380009A9CA /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99782DDE1EA535380009A9CA /* Globals.swift */; };
+		998FFA4C1EB0FD12004B0185 /* APODTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998FFA4B1EB0FD12004B0185 /* APODTests.swift */; };
+		998FFA4E1EB1103E004B0185 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998FFA4D1EB1103E004B0185 /* APOD.swift */; };
 		99DB90641EA8F95600F2A564 /* DataHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB90631EA8F95600F2A564 /* DataHandlerTests.swift */; };
 		99DB90661EA8FA8400F2A564 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB90651EA8FA8400F2A564 /* DataHandler.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		99782DD21EA4D3000009A9CA /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		99782DD41EA4D5170009A9CA /* NetworkManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		99782DDE1EA535380009A9CA /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		998FFA4B1EB0FD12004B0185 /* APODTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APODTests.swift; sourceTree = "<group>"; };
+		998FFA4D1EB1103E004B0185 /* APOD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 		99DB90631EA8F95600F2A564 /* DataHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandlerTests.swift; sourceTree = "<group>"; };
 		99DB90651EA8FA8400F2A564 /* DataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,9 +123,9 @@
 		99782DB81EA4BAC60009A9CA /* APOD BrowserTests */ = {
 			isa = PBXGroup;
 			children = (
+				998FFA491EB0F3CF004B0185 /* Networking */,
+				998FFA4A1EB0F3E6004B0185 /* Data */,
 				99782DBB1EA4BAC60009A9CA /* Info.plist */,
-				99782DD41EA4D5170009A9CA /* NetworkManagerTests.swift */,
-				99DB90631EA8F95600F2A564 /* DataHandlerTests.swift */,
 			);
 			path = "APOD BrowserTests";
 			sourceTree = "<group>";
@@ -159,6 +163,7 @@
 			children = (
 				99782DA81EA4BAC60009A9CA /* APOD_Browser.xcdatamodeld */,
 				99DB90651EA8FA8400F2A564 /* DataHandler.swift */,
+				998FFA4D1EB1103E004B0185 /* APOD.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -202,6 +207,23 @@
 				99782DD21EA4D3000009A9CA /* NetworkManager.swift */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		998FFA491EB0F3CF004B0185 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				99782DD41EA4D5170009A9CA /* NetworkManagerTests.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		998FFA4A1EB0F3E6004B0185 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				99DB90631EA8F95600F2A564 /* DataHandlerTests.swift */,
+				998FFA4B1EB0FD12004B0185 /* APODTests.swift */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +366,7 @@
 				99782DD31EA4D3000009A9CA /* NetworkManager.swift in Sources */,
 				99782DAA1EA4BAC60009A9CA /* APOD_Browser.xcdatamodeld in Sources */,
 				99782DA41EA4BAC60009A9CA /* ViewController.swift in Sources */,
+				998FFA4E1EB1103E004B0185 /* APOD.swift in Sources */,
 				99782DDF1EA535380009A9CA /* Globals.swift in Sources */,
 				99DB90661EA8FA8400F2A564 /* DataHandler.swift in Sources */,
 				99782DA21EA4BAC60009A9CA /* AppDelegate.swift in Sources */,
@@ -355,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99DB90641EA8F95600F2A564 /* DataHandlerTests.swift in Sources */,
+				998FFA4C1EB0FD12004B0185 /* APODTests.swift in Sources */,
 				99782DD51EA4D5170009A9CA /* NetworkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
