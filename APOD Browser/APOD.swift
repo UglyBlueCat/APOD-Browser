@@ -20,22 +20,15 @@ class APOD {
     
     init() {}
     
-    init(copyright: String,
-         date: String,
-         explanation: String,
-         hdurl: String,
-         media_type: String,
-         service_version: String,
-         title: String,
-         url: String) {
-        
-        self.copyright = copyright
-        self.date = date
-        self.explanation = explanation
-        self.hdurl = hdurl
-        self.media_type = media_type
-        self.service_version = service_version
-        self.title = title
-        self.url = url
+    init(apodDic : Dictionary<String, String>) {
+        DLog("apodDic:\n\(apodDic)")
+        self.copyright = apodDic["copyright"] ?? "Public Domain"
+        self.date = apodDic["date"] ?? ""
+        self.explanation = apodDic["explanation"] ?? ""
+        self.hdurl = apodDic["hdurl"] ?? ""
+        self.media_type = apodDic["media_type"] ?? ""
+        self.service_version = apodDic["service_version"] ?? ""
+        self.title = apodDic["title"] ?? ""
+        self.url = apodDic["url"] ?? ""
     }
 }

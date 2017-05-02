@@ -10,6 +10,16 @@ import XCTest
 @testable import APOD_Browser
 
 class APODTests: XCTestCase {
+    
+    let apiTestDict : Dictionary<String, String> = [
+        "copyright" : "Public Domain",
+        "date": "2017-05-01",
+        "explanation": "The bright source near the center is a neutron star, the incredibly dense, collapsed remains of a massive stellar core. Surrounding it is supernova remnant Cassiopeia A (Cas A), a comfortable 11,000 light-years away. Light from the Cas A supernova, the death explosion of a massive star, first reached Earth about 350 years ago.  The expanding debris cloud spans about 15 light-years in this composite X-ray/optical image.  Still hot enough to emit X-rays, Cas A's neutron star is cooling. In fact, years of observations with the orbiting Chandra X-ray Observatory find that the neutron star is cooling rapidly --  so rapidly that researchers suspect a large part of the neutron star's core is forming a frictionless neutron superfluid. The Chandra results represent the first observational evidence for this bizarre state of neutron matter.",
+        "hdurl": "https://apod.nasa.gov/apod/image/1705/casa_main_960.jpg",
+        "media_type": "image",
+        "service_version": "v1",
+        "title": "Cooling Neutron Star",
+        "url": "https://apod.nasa.gov/apod/image/1705/casa_main_960.jpg"]
 
     func testClassExists() {
         let _ : APOD = APOD()
@@ -35,31 +45,15 @@ class APODTests: XCTestCase {
     }
     
     func testParamInit() {
-        let copyright = "Subaru, NAOJ"
-        let date = "2017-04-28"
-        let explanation = "Some 60 million light-years away in the southerly constellation Corvus, two large galaxies are colliding. Stars in the two galaxies, cataloged as NGC 4038 and NGC 4039, very rarely collide in the course of the ponderous cataclysm that lasts for hundreds of millions of years. But the galaxies' large clouds of molecular gas and dust often do, triggering furious episodes of star formation near the center of the cosmic wreckage. Spanning over 500 thousand light-years, this stunning view also reveals new star clusters and matter flung far from the scene of the accident by gravitational tidal forces. The remarkable mosaicked image was constructed using data from the ground-based Subaru telescope to bring out large-scale and faint tidal streams, and Hubble Space Telescope data of extreme detail in the bright cores. The suggestive visual appearance of the extended arcing structures gives the galaxy pair its popular name - The Antennae."
-        let hdurl = "https://apod.nasa.gov/apod/image/1704/AntennaeColombari1824x0_q100_watermark.jpg"
-        let media_type = "image"
-        let service_version = "v1"
-        let title = "Exploring the Antennae"
-        let url = "https://apod.nasa.gov/apod/image/1704/AntennaeColombari1024_q100_watermark.jpg"
+        let apod : APOD = APOD(apodDic : apiTestDict)
         
-        let apod : APOD = APOD(copyright: copyright,
-                               date: date,
-                               explanation: explanation,
-                               hdurl: hdurl,
-                               media_type: media_type,
-                               service_version: service_version,
-                               title: title,
-                               url: url)
-        
-        XCTAssert(apod.copyright == copyright)
-        XCTAssert(apod.date == date)
-        XCTAssert(apod.explanation == explanation)
-        XCTAssert(apod.hdurl == hdurl)
-        XCTAssert(apod.media_type == media_type)
-        XCTAssert(apod.service_version == service_version)
-        XCTAssert(apod.title == title)
-        XCTAssert(apod.url == url)
+        XCTAssert(apod.copyright == apiTestDict["copyright"]!)
+        XCTAssert(apod.date == apiTestDict["date"]!)
+        XCTAssert(apod.explanation == apiTestDict["explanation"]!)
+        XCTAssert(apod.hdurl == apiTestDict["hdurl"]!)
+        XCTAssert(apod.media_type == apiTestDict["media_type"]!)
+        XCTAssert(apod.service_version == apiTestDict["service_version"]!)
+        XCTAssert(apod.title == apiTestDict["title"]!)
+        XCTAssert(apod.url == apiTestDict["url"]!)
     }
 }
