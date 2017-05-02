@@ -21,7 +21,6 @@ class APOD {
     init() {}
     
     init(apodDic : Dictionary<String, String>) {
-        DLog("apodDic:\n\(apodDic)")
         self.copyright = apodDic["copyright"] ?? "Public Domain"
         self.date = apodDic["date"] ?? ""
         self.explanation = apodDic["explanation"] ?? ""
