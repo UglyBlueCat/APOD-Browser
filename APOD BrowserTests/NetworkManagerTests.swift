@@ -49,4 +49,29 @@ class NetworkManagerTests: XCTestCase {
         waitForExpectations(timeout: 10, handler: nil)
         XCTAssert(testData.count > 0)
     }
+    
+    func testCanHandleRequest() {
+        if let url : URL = URL(string: "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY") {
+            let urlRequest : URLRequest = URLRequest(url: url)
+            networkManager.handleRequest(request: urlRequest,
+                 completion: {
+                    (data, urlResponse, error) in
+                    guard error == nil else {
+                        XCTFail("error: \(String(describing: error))")
+                        return
+                    }
+                    guard data != nil else {
+                        XCTFail("null data")
+                        return
+                    }
+                    if let httpResponse = urlResponse as? HTTPURLResponse {
+                        XCTAssert(httpResponse.statusCode == 200, "status code == \(httpResponse.statusCode)")
+                    } else {
+                        XCTFail("unable to cast URLResponse to HTTPURLResponse")
+                    }
+            })
+        } else {
+            XCTFail("")
+        }
+    }
 }
