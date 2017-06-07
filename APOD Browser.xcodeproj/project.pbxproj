@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		995180241EE8496F00C51C14 /* DataInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995180231EE8496F00C51C14 /* DataInterfaceTests.swift */; };
+		995180261EE8498300C51C14 /* DataInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995180251EE8498300C51C14 /* DataInterface.swift */; };
 		99632AF91EDF342A00E210FA /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99632AF81EDF342A00E210FA /* FileHandler.swift */; };
 		99632AFB1EDF344500E210FA /* FileHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99632AFA1EDF344500E210FA /* FileHandlerTests.swift */; };
 		99782DA21EA4BAC60009A9CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99782DA11EA4BAC60009A9CA /* AppDelegate.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		995180231EE8496F00C51C14 /* DataInterfaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataInterfaceTests.swift; sourceTree = "<group>"; };
+		995180251EE8498300C51C14 /* DataInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataInterface.swift; sourceTree = "<group>"; };
 		99632AF81EDF342A00E210FA /* FileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
 		99632AFA1EDF344500E210FA /* FileHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandlerTests.swift; sourceTree = "<group>"; };
 		99782D9E1EA4BAC60009A9CA /* APOD Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "APOD Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +173,7 @@
 				99782DA81EA4BAC60009A9CA /* APOD_Browser.xcdatamodeld */,
 				99DB90651EA8FA8400F2A564 /* DataHandler.swift */,
 				998FFA4D1EB1103E004B0185 /* APOD.swift */,
+				995180251EE8498300C51C14 /* DataInterface.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				99632AFA1EDF344500E210FA /* FileHandlerTests.swift */,
 				99DB90631EA8F95600F2A564 /* DataHandlerTests.swift */,
 				998FFA4B1EB0FD12004B0185 /* APODTests.swift */,
+				995180231EE8496F00C51C14 /* DataInterfaceTests.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				99782DAA1EA4BAC60009A9CA /* APOD_Browser.xcdatamodeld in Sources */,
 				99632AF91EDF342A00E210FA /* FileHandler.swift in Sources */,
 				99782DA41EA4BAC60009A9CA /* ViewController.swift in Sources */,
+				995180261EE8498300C51C14 /* DataInterface.swift in Sources */,
 				998FFA4E1EB1103E004B0185 /* APOD.swift in Sources */,
 				99782DDF1EA535380009A9CA /* Globals.swift in Sources */,
 				99DB90661EA8FA8400F2A564 /* DataHandler.swift in Sources */,
@@ -387,6 +394,7 @@
 				99DB90641EA8F95600F2A564 /* DataHandlerTests.swift in Sources */,
 				998FFA4C1EB0FD12004B0185 /* APODTests.swift in Sources */,
 				99632AFB1EDF344500E210FA /* FileHandlerTests.swift in Sources */,
+				995180241EE8496F00C51C14 /* DataInterfaceTests.swift in Sources */,
 				99782DD51EA4D5170009A9CA /* NetworkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
