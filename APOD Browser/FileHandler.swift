@@ -12,7 +12,8 @@ class FileHandler {
     
     enum FileHandlerError: Error {
         case findPathError
-        case appendFolderError(folder : String)
+        case appendFolderError(_ : String)
+        case writeError(_ : String)
     }
     
     var fileURL : URL!
@@ -27,6 +28,14 @@ class FileHandler {
         }
     }
     
+    /**
+     Creates a URL for a file and assigns it to the global variable fileURL
+     
+     - parameters:
+         - fileName: The name of the file
+     
+     - throws: An error describing what went wrong
+     */
     private func createFileURL(_ fileName : String) throws {
         let folder = "APOD_Browser"
         
@@ -35,7 +44,7 @@ class FileHandler {
         }
         
         guard let writePath = NSURL(fileURLWithPath: path).appendingPathComponent(folder) else {
-            throw FileHandlerError.appendFolderError(folder: folder)
+            throw FileHandlerError.appendFolderError(folder)
         }
         
         do {
@@ -47,29 +56,56 @@ class FileHandler {
         fileURL = writePath.appendingPathComponent(fileName)
     }
     
-    func write(_ text : String) throws {
+    /**
+     Stores a Data object in the file at the URL created by init
+     
+     - parameters:
+         - data: The Data object to store
+     
+     - throws: An error describing what went wrong
+     */
+    func write(_ data : Data) throws {
         do {
-            try text.write(to: fileURL, atomically: false, encoding: String.Encoding.utf8)
+            try data.write(to: fileURL)
         } catch {
-            throw error
+            throw FileHandlerError.writeError(error.localizedDescription)
         }
     }
     
-    func read() throws -> String {
-        var readString : String
+    /**
+     Reads data from the file at the URL created by init
+     
+     - returns: The Data object read from the file
+     
+     - throws: An error describing what went wrong
+     */
+    func read() throws -> Data {
+        var readData : Data
         
         do {
-            readString = try String(contentsOf: fileURL)
+            readData = try Data(contentsOf: fileURL)
         } catch {
             throw error
         }
         
-        return readString
+        return readData
     }
     
-    func delete() throws {
+    /**
+     Deletes the file at the URL created by init
+     
+     - throws: An error describing what went wrong
+     */
+    func delete(completion : (() throws -> Void)? = nil) throws {
+        
         do {
             try FileManager.default.removeItem(at: fileURL)
+        } catch {
+            throw error
+        }
+        
+        do {
+            try completion?()
         } catch {
             throw error
         }
