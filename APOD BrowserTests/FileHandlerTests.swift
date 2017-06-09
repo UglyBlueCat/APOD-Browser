@@ -11,11 +11,11 @@ import XCTest
 
 class FileHandlerTests: XCTestCase {
     var testFile : FileHandler = FileHandler()
-    var testData : Data = Data()
-    var readData : Data = Data()
     
-    override func setUp() {
-        super.setUp()
+    func testWriteAndReadAPODObject() {
+        var testData : Data = Data()
+        var readData : Data = Data()
+        
         let testDict : Dictionary<String, Any> = ["array":[1,2,3], "boolean":true, "number":123, "object":["a":"b","c":"d","e":"f"], "string":"Hello World"]
         
         do {
@@ -29,19 +29,6 @@ class FileHandlerTests: XCTestCase {
         } catch {
             XCTFail("Failed to convert testDict to JSON data: \(error.localizedDescription)")
         }
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-        
-        do {
-            try testFile.delete()
-        } catch {
-            XCTFail("Failed to delete file: \(error.localizedDescription)")
-        }
-    }
-    
-    func testWriteAndRead() {
         
         do {
             try testFile.write(testData)
@@ -56,5 +43,11 @@ class FileHandlerTests: XCTestCase {
         }
         
         XCTAssertEqual(testData, readData)
+        
+        do {
+            try testFile.delete()
+        } catch {
+            XCTFail("Failed to delete file: \(error.localizedDescription)")
+        }
     }
 }
