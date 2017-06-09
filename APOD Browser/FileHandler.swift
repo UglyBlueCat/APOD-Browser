@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class FileHandler {
     
@@ -14,6 +15,7 @@ class FileHandler {
         case findPathError
         case appendFolderError(_ : String)
         case writeError(_ : String)
+        case conversionError(_ : String)
     }
     
     var fileURL : URL!
@@ -109,5 +111,41 @@ class FileHandler {
         } catch {
             throw error
         }
+    }
+    
+    func writeImage(_ image : UIImage,
+                    completion : (() throws -> Void)? = nil) throws {
+        
+        guard let data = UIImagePNGRepresentation(image) else {
+            throw FileHandlerError.conversionError("Cannot convert UIImage to Data")
+        }
+        
+        do {
+            try write(data)
+        } catch {
+            throw error
+        }
+        
+        do {
+            try completion?()
+        } catch {
+            throw error
+        }
+    }
+    
+    func readImage() throws -> UIImage {
+        var data = Data()
+        
+        do {
+            data = try read()
+        } catch {
+            throw error
+        }
+        
+        guard let image = UIImage(data: data) else {
+            throw FileHandlerError.conversionError("Cannot convert Data to UIImage")
+        }
+        
+        return image
     }
 }

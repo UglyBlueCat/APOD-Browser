@@ -50,4 +50,63 @@ class FileHandlerTests: XCTestCase {
             XCTFail("Failed to delete file: \(error.localizedDescription)")
         }
     }
+    
+    func testWriteAndReadImage() {
+        var readImage = UIImage()
+        
+        guard let testImage = UIImage(color: UIColor.purple) else {
+            XCTFail("Cannot create test image")
+            return
+        }
+        
+        do {
+            try testFile = FileHandler(fileName: "testImage")
+        } catch {
+            XCTFail("Failed file URL creation: \(error.localizedDescription)")
+        }
+        
+        do {
+            try testFile.writeImage(testImage)
+        } catch {
+            XCTFail("Error writing image: \(error.localizedDescription)")
+        }
+        
+        do {
+            readImage = try testFile.readImage()
+        } catch {
+            XCTFail("Error reading image: \(error.localizedDescription)")
+        }
+        
+        XCTAssertEqual(testImage.size, readImage.size)
+        
+        guard let testImagedata = UIImagePNGRepresentation(testImage) else {
+            XCTFail("Cannot convert test UIImage to Data")
+            return
+        }
+        
+        guard let readImagedata = UIImagePNGRepresentation(readImage) else {
+            XCTFail("Cannot convert read UIImage to Data")
+            return
+        }
+        
+        XCTAssertEqual(testImagedata, readImagedata)
+    }
+}
+
+/*
+ * Create image from colour
+ * Taken from http://stackoverflow.com/questions/26542035/create-uiimage-with-solid-color-in-swift
+ */
+public extension UIImage {
+    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        let rect = CGRect(origin: .zero, size: size)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        guard let cgImage = image?.cgImage else { return nil }
+        self.init(cgImage: cgImage)
+    }
 }
