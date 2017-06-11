@@ -16,7 +16,8 @@ class DataInterface {
     
     var fileHandler = FileHandler()
     
-    func saveAPODObject(_ APODDict: Dictionary<String, String>) throws {
+    func saveAPODObject(_ APODDict: Dictionary<String, String>,
+                        completion : (() throws -> Void)? = nil) throws {
         
         var APODData = Data()
         
@@ -27,7 +28,7 @@ class DataInterface {
         do {
             fileHandler = try FileHandler(fileName: date)
             APODData = try JSONSerialization.data(withJSONObject: APODDict)
-            try fileHandler.write(APODData)
+            try fileHandler.write(APODData, completion: completion)
         } catch {
             throw error
         }
