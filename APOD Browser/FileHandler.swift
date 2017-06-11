@@ -66,11 +66,17 @@ class FileHandler {
      
      - throws: An error describing what went wrong
      */
-    func write(_ data : Data) throws {
+    func write(_ data : Data, completion : (() throws -> Void)? = nil) throws {
         do {
             try data.write(to: fileURL)
         } catch {
             throw FileHandlerError.writeError(error.localizedDescription)
+        }
+        
+        do {
+            try completion?()
+        } catch {
+            throw error
         }
     }
     
