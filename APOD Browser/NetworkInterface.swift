@@ -45,7 +45,7 @@ class NetworkInterface {
             
             completion!()
         }
-}
+    }
     
     func downloadImage() {
         
