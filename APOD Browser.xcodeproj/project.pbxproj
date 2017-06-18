@@ -21,6 +21,8 @@
 		99782DD31EA4D3000009A9CA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99782DD21EA4D3000009A9CA /* NetworkManager.swift */; };
 		99782DD51EA4D5170009A9CA /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99782DD41EA4D5170009A9CA /* NetworkManagerTests.swift */; };
 		99782DDF1EA535380009A9CA /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99782DDE1EA535380009A9CA /* Globals.swift */; };
+		997DC2401EED91F0003C35E6 /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DC23F1EED91F0003C35E6 /* NetworkInterface.swift */; };
+		997DC2421EED9220003C35E6 /* NetworkInterfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997DC2411EED9220003C35E6 /* NetworkInterfaceTests.swift */; };
 		998FFA4C1EB0FD12004B0185 /* APODTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998FFA4B1EB0FD12004B0185 /* APODTests.swift */; };
 		998FFA4E1EB1103E004B0185 /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998FFA4D1EB1103E004B0185 /* APOD.swift */; };
 		99DB90641EA8F95600F2A564 /* DataHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DB90631EA8F95600F2A564 /* DataHandlerTests.swift */; };
@@ -65,6 +67,8 @@
 		99782DD21EA4D3000009A9CA /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		99782DD41EA4D5170009A9CA /* NetworkManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		99782DDE1EA535380009A9CA /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		997DC23F1EED91F0003C35E6 /* NetworkInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
+		997DC2411EED9220003C35E6 /* NetworkInterfaceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterfaceTests.swift; sourceTree = "<group>"; };
 		998FFA4B1EB0FD12004B0185 /* APODTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APODTests.swift; sourceTree = "<group>"; };
 		998FFA4D1EB1103E004B0185 /* APOD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 		99DB90631EA8F95600F2A564 /* DataHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandlerTests.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				99782DD21EA4D3000009A9CA /* NetworkManager.swift */,
+				997DC23F1EED91F0003C35E6 /* NetworkInterface.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				99782DD41EA4D5170009A9CA /* NetworkManagerTests.swift */,
+				997DC2411EED9220003C35E6 /* NetworkInterfaceTests.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 				998FFA4E1EB1103E004B0185 /* APOD.swift in Sources */,
 				99782DDF1EA535380009A9CA /* Globals.swift in Sources */,
 				99DB90661EA8FA8400F2A564 /* DataHandler.swift in Sources */,
+				997DC2401EED91F0003C35E6 /* NetworkInterface.swift in Sources */,
 				99782DA21EA4BAC60009A9CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +402,7 @@
 				998FFA4C1EB0FD12004B0185 /* APODTests.swift in Sources */,
 				99632AFB1EDF344500E210FA /* FileHandlerTests.swift in Sources */,
 				995180241EE8496F00C51C14 /* DataInterfaceTests.swift in Sources */,
+				997DC2421EED9220003C35E6 /* NetworkInterfaceTests.swift in Sources */,
 				99782DD51EA4D5170009A9CA /* NetworkManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
