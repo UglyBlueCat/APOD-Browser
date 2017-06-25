@@ -34,7 +34,7 @@ class FileHandler {
      Creates a URL for a file and assigns it to the global variable fileURL
      
      - parameters:
-         - fileName: The name of the file
+        - fileName: The name of the file
      
      - throws: An error describing what went wrong
      */
@@ -62,7 +62,8 @@ class FileHandler {
      Stores a Data object in the file at the URL created by init
      
      - parameters:
-         - data: The Data object to store
+        - data: The Data object to store
+        - completion: A block for execution after successful save
      
      - throws: An error describing what went wrong
      */
@@ -119,6 +120,15 @@ class FileHandler {
         }
     }
     
+    /**
+     Writes an image to the file URL
+     
+     - parameters:
+        - image: A UIImage object
+        - completion: A block for execution after successful save
+     
+     - throws: A FileHandlerError.conversionError if the image cannot be converted to data, a write error or whatever is thrown by the completion block.
+     */
     func writeImage(_ image : UIImage,
                     completion : (() throws -> Void)? = nil) throws {
         
@@ -139,6 +149,13 @@ class FileHandler {
         }
     }
     
+    /**
+     Reads an image from the file URL
+     
+     - returns: a UIImage read from the file
+     
+     - throws: A FileHandlerError.conversionError if the date read from the file cannot be converted to UIImage, or a read error.
+     */
     func readImage() throws -> UIImage {
         var data = Data()
         
